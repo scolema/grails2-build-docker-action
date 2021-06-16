@@ -1,0 +1,14 @@
+# action.yml
+name: 'Grails 2.5.6 Build'
+author: 'Saul Colean'
+description: 'Build Grails 2.5.6 War'
+inputs:
+  grailsEnv:
+    description: 'Grails Environment'
+    required: true
+    default: 'production'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.grailsEnv }}
